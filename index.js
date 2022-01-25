@@ -95,6 +95,10 @@ const workspace = process.env.GITHUB_WORKSPACE;
     version = 'prerelease';
   }
 
+  const bumpOverride = process.env['INPUT_BUMP-OVERRIDE']
+  if (['patch', 'minor', 'major'].includes(bumpOverride)) 
+    version = bumpOverride;
+
   console.log('version action after first waterfall:', version);
 
   // case: if default=prerelease,

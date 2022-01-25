@@ -66,6 +66,10 @@ inputs:
     description: '[DEPRECATED] Set to false to skip pushing the new tag'
     default: 'true'
     required: false
+  bump-override:
+    description: 'Specific way to bump. Allowed values are patch,minor,major'
+    default: ''
+    required: false
 outputs:
   newTag:
     description: 'The newly created tag'
