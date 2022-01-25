@@ -167,6 +167,25 @@ Example:
     bump-policy: 'ignore'
 ```
 
+#### **bump-override:**
+Overrides the bump type. Useful if the bump type is determined externally, and this action can be told how to bump the package version.
+Options are as follows:
+
+* `''` (default): fall-back to default logic for bump type
+* `'patch'`: patch bump `(*.*.X)`
+* `'minor'`: minor bump `(*.X.*)`
+* `'major'`: major bump `(X.*.*)`
+
+Example:
+```yaml
+- name:  'Automated Version Bump'
+  uses:  'phips28/gh-action-bump-version@master'
+  env:
+    GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+  with:
+    bump-policy: 'ignore'
+```
+
 #### [DEPRECATED] **push:**
 **DEPRECATED** Set false you want to avoid pushing the new version tag/package.json. Example:
 ```yaml
